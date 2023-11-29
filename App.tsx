@@ -1,20 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import { ApplicationProvider } from "@ui-kitten/components";
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { BottomTabNavigation } from "./src/navigation/BottomTabNavigation";
+import * as eva from "@eva-design/eva";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.rootContainer}>
+      <ApplicationProvider {...eva} theme={eva.light}>
+        <NavigationContainer>
+          <StatusBar style="dark" />
+          <BottomTabNavigation />
+        </NavigationContainer>
+      </ApplicationProvider>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  rootContainer: { flex: 1 },
 });
