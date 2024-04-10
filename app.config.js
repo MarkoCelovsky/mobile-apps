@@ -6,13 +6,21 @@ module.exports = {
     icon: "./assets/yazda-dark.png",
     userInterfaceStyle: "automatic",
     scheme: "aplikacie",
+    plugins: [
+      [
+        "expo-contacts",
+        {
+          contactsPermission: "Allow Aplikacie to access your contacts.",
+        },
+      ],
+    ],
     notification: {
       androidMode: "default",
       icon: "./assets/yazda-light--noti-logo.png",
       color: "#FFFFFF",
     },
     splash: {
-      image: "./assets/top_res_splash.png",
+      image: "./assets/splash.png",
       resizeMode: "cover",
       backgroundColor: "#000",
     },
